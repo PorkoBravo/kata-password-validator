@@ -22,4 +22,5 @@ export class Password {
         if(match) return true
         else return false
     }
+
 }
