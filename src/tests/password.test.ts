@@ -7,4 +7,10 @@ describe("Password validator should", () => {
 		expect(password.isValid(null as unknown as string)).toBe(false)
 		expect(password.isValid("")).toBe(false)
 	})
+
+	it("not validate a password that is under six characters", ()=> {
+		const password: Password = new Password()
+
+		expect(password.isValid("asfgg")).toBe(false)
+	})
 })
