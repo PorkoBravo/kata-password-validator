@@ -22,9 +22,9 @@ describe("Password validator should NOT validate a password that", () => {
 })
 
 describe("Password validator should validate a password that", ()=> {
-	it("is six or more characters length", ()=> {
-		expect(password.isValid("1sixsix")).toBe(true)
-		expect(password.isValid("1sixsixs")).toBe(true)
+	it("is six or more characters length, contains at least one number and at least one capitalice letter", ()=> {
+		expect(password.isValid("1sixsiX")).toBe(true)
+		expect(password.isValid("1sixsixS")).toBe(true)
 	})
 })
 
