@@ -7,7 +7,8 @@ export class Password {
     public isValid(password: string): boolean {
         if(!!!password 
             || this.isUnderMinimumLength(password)
-            || !this.containsNumber(password)) return false
+            || !this.containsNumber(password)
+            || !this.containsUppercaseLetter(password)) return false
 
         return true;
     }
@@ -23,4 +24,10 @@ export class Password {
         else return false
     }
 
+    private containsUppercaseLetter(password: string): boolean {
+        const match = password.match(/[A-Z]/)
+
+        if(match) return true
+        return false
+    }
 }
