@@ -1,15 +1,19 @@
 export class Password {
 
-    readonly MINIMUM_LENGTH: number = 6
+    private readonly MINIMUM_LENGTH: number = 6
+
+
+    private readonly oneNumber: RegExp = /\d/;
+    private readonly uppercaseLetter: RegExp = /[A-Z]/;
+    private readonly lowercaseLetter: RegExp = /[a-z]/;
+    private readonly underscore: RegExp = /_/;
 
     constructor() {}
 
     public isValid(password: string): boolean {
         if(!!!password 
             || this.isUnderMinimumLength(password)
-            || !this.containsNumber(password)
-            || !this.containsUppercaseLetter(password)
-            || !this.containsUnderscore(password)) return false
+            || !this.matchExpression(password)) return false
 
         return true;
     }
@@ -18,24 +22,12 @@ export class Password {
         return password.length < this.MINIMUM_LENGTH
     }
 
-    private containsNumber(password: string): boolean {
-        const match = password.match(/\d+/g)
- 
-        if(match) return true
-        else return false
-    }
-
-    private containsUppercaseLetter(password: string): boolean {
-        const match = password.match(/[A-Z]/)
-
-        if(match) return true
-        return false
-    }
-
-    private containsUnderscore(password: string): boolean {
-        const match = password.match(/_/)
-
-        if(match) return true
+    private matchExpression(password: string): boolean {
+        if(this.oneNumber.test(password) 
+            && this.uppercaseLetter.test(password) 
+            && this.underscore.test(password)
+            && this.lowercaseLetter.test(password))
+            return true
         return false
     }
 }
