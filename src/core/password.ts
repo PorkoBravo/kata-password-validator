@@ -6,12 +6,17 @@ export class Password {
 
     public isValid(password: string): boolean {
         if(!!!password 
-            || this.isUnderMinimumLength(password)) return false
+            || this.isUnderMinimumLength(password)
+            || !this.containsNumber(password)) return false
 
         return true;
     }
 
     private isUnderMinimumLength(password: string): boolean {
         return password.length < this.MINIMUM_LENGTH
+    }
+
+    private containsNumber(password: string): boolean {
+        return true
     }
 }

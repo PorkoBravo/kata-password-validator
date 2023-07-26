@@ -13,18 +13,18 @@ describe("Password validator should NOT validate a password that", () => {
 	})
 
 	it("is under six characters", ()=> {
-		expect(password.isValid("asfgg")).toBe(false)
+		expect(password.isValid("four")).toBe(false)
 	})
 
 	it("not contains at least one number", ()=>{
-		expect(password.isValid("asfgg")).toBe(false)
+		expect(password.isValid("notnumber")).toBe(false)
 	})
 })
 
 describe("Password validator should validate a password that", ()=> {
 	it("is six or more characters length", ()=> {
-		expect(password.isValid("qwerty")).toBe(true)
-		expect(password.isValid("qwertyu")).toBe(true)
+		expect(password.isValid("sixsix")).toBe(true)
+		expect(password.isValid("sixsixs")).toBe(true)
 	})
 })
 
