@@ -1,14 +1,17 @@
 export class Password {
 
+    readonly MINIMUM_LENGTH: number = 6
+
     constructor() {}
 
     public isValid(password: string): boolean {
-        if(!!!password || this.isUnderSix(password)) return false
+        if(!!!password 
+            || this.isUnderMinimumLength(password)) return false
 
         return true;
     }
 
-    private isUnderSix(password: string): boolean {
-        return password.length <= 6
+    private isUnderMinimumLength(password: string): boolean {
+        return password.length <= this.MINIMUM_LENGTH
     }
 }
