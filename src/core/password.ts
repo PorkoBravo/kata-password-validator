@@ -12,6 +12,6 @@ export class Password {
     }
 
     private isUnderMinimumLength(password: string): boolean {
-        return password.length <= this.MINIMUM_LENGTH
+        return password.length < this.MINIMUM_LENGTH
     }
 }

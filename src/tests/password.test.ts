@@ -15,4 +15,9 @@ describe("Password validator should", () => {
 	it("not validate a password that is under six characters", ()=> {
 		expect(password.isValid("asfgg")).toBe(false)
 	})
+
+	it("validate a password with six or more characters", ()=> {
+		expect(password.isValid("qwerty")).toBe(true)
+		expect(password.isValid("qwertyu")).toBe(true)
+	})
 })
