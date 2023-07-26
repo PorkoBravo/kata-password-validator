@@ -6,18 +6,26 @@ beforeEach(() => {
 	password = new Password()
   });
 
-describe("Password validator should", () => {
-	it("not validate null or empty passwords", () => {
+describe("Password validator should NOT validate a password that", () => {
+	it("is null or empty", () => {
 		expect(password.isValid(null as unknown as string)).toBe(false)
 		expect(password.isValid("")).toBe(false)
 	})
 
-	it("not validate a password that is under six characters", ()=> {
+	it("is under six characters", ()=> {
 		expect(password.isValid("asfgg")).toBe(false)
 	})
 
-	it("validate a password with six or more characters", ()=> {
+	it("not contains at least one number", ()=>{
+		expect(password.isValid("asfgg")).toBe(false)
+	})
+})
+
+describe("Password validator should validate a password that", ()=> {
+	it("is six or more characters length", ()=> {
 		expect(password.isValid("qwerty")).toBe(true)
 		expect(password.isValid("qwertyu")).toBe(true)
 	})
 })
+
+
