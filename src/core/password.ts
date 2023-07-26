@@ -1,10 +1,8 @@
 export class Password {
 
-    constructor() {
+    constructor() {}
 
-    }
-
-    public echo(): boolean {
+    public isValid(password: string): boolean {
         return true;
     }
 }
