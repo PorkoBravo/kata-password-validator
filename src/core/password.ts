@@ -9,7 +9,7 @@ export class Password {
             || this.isUnderMinimumLength(password)
             || !this.containsNumber(password)
             || !this.containsUppercaseLetter(password)
-            || this.containsUnderscore(password)) return false
+            || !this.containsUnderscore(password)) return false
 
         return true;
     }
