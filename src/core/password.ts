@@ -17,6 +17,9 @@ export class Password {
     }
 
     private containsNumber(password: string): boolean {
-        return true
+        const match = password.match(/\d+/g)
+ 
+        if(match) return true
+        else return false
     }
 }
