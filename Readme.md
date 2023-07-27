@@ -19,15 +19,15 @@ Taking account of the requirements:
 * Contain any underscore
 
 ### Invalid examples:
-1
-null
-""
-1Am_
+* 1
+* null
+* ""
+* 1Am_
 
 ###	Valid examples:
-1Am_1A
-___1As
-#daR1io#daR1io
+* 1Am_1A
+* ___1As
+* #daR1io#daR1io
 
 # Template - Testing Sostenible con TypeScript
 
